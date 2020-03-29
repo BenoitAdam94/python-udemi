@@ -9,7 +9,7 @@ a = int(input("Entrez un nombre "))
 b = int(input("Entrez un nombre "))
 
 c = a + b
-print(f"Le résultat de {a} et de {b} est de {a+b}")
+print(f"Le résultat de {a} + {b} est de {a+b}")
 
 time.sleep(1)
 sleep(1)
