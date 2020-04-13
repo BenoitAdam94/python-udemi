@@ -11,8 +11,8 @@ texture = pygame.image.load("enemy.png")
 posX = 0
 posY = 0
 
-velX = 1
-velY = 0.5
+velX = 0.1
+velY = 0.05
 
 gameover = False
 
@@ -22,9 +22,16 @@ while not gameover:
         if event.type == pygame.QUIT:
             gameover = True
         
-        posX += velX
-        posY += velY
+    posX += velX
+    posY += velY
+    
+    if posX < 0 or posX > width - texture.get_rect().width:
+        velX = -velX
+    if posY < 0 or posY > height - texture.get_rect().height:
+        velY = -velY
         
-        screen.fill ((0, 0 , 0))
-        screen.blit(texture, (posX, posY))
-        pygame.display.flip()
+    screen.fill ((0, 0 , 0))
+    screen.blit(texture, (posX, posY))
+    pygame.display.flip()
+    
+pygame.quit()
