@@ -1,37 +1,49 @@
 import pygame
 
+# game settings
+
+SCREEN_WIDTH = 640
+SCREEN_HEIGHT = 480
+
+COLOR_BLACK = 0, 0, 0
+COLOR_GREEN = 166, 206, 57
+
+TEXT_PADDING = 25
+PADDLE_SPEED = 5
+PADDLE_OFFSET = 10
+BALL_SPEED = 3
+SPIN_PERCENT = 0.5
+
+# functions
+
+def update(elapsedTime):
+    return None
+
+def draw():
+    return None
+    
+# initialisation
 pygame.init()
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-width = 640
-height = 480
-
-screen = pygame.display.set_mode((width, height))
-texture = pygame.image.load("enemy.png")
-
-posX = 0
-posY = 0
-
-velX = 0.1
-velY = 0.05
-
+# loop control and timing
 gameover = False
 
+lastTick = pygame.time.get_ticks()
+elapsedTime = 0
+
+# gameloop
 while not gameover:
     events = pygame.event.get()
     for event in events:
         if event.type == pygame.QUIT:
             gameover = True
-        
-    posX += velX
-    posY += velY
+        elif event.type == pygame.KEYDOWN and event.type == pygame.K_ESC:
+            gameover = True
     
-    if posX < 0 or posX > width - texture.get_rect().width:
-        velX = -velX
-    if posY < 0 or posY > height - texture.get_rect().height:
-        velY = -velY
-        
-    screen.fill ((0, 0 , 0))
-    screen.blit(texture, (posX, posY))
-    pygame.display.flip()
+    elapsedTime = pygame.time.get_ticks() - lastTick
+    lastTick = pygame.time.get_ticks()
     
-pygame.quit()
+    update(elapsedTime)
+    draw
+        
