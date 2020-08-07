@@ -23,12 +23,16 @@ for k in range(4):
         card = (cardfaces[l] + " of " + suits[k])
         deck.append(card)
 
-for m in range(52):
-    print(deck[m])
+# Verification du paquet
+# for m in range(52):
+#    print(deck[m])
+# print("")
 
 # Melange le paquet
 random.shuffle(deck)
-print("")
 
+# impression du paquet
 for m in range(52):
     print(deck[m])
+
+print("")
