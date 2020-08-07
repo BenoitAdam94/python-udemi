@@ -4,13 +4,15 @@ import random, time
 player1deck = []
 player2deck = []
 
+# Distribution des cartes
+
 for i in range(26):
     player1deck.append(deck[i])
 
 for i in range(26,52):
     player2deck.append(deck[i])
 
-# Impression des jeux
+# Affichage des jeux (facultatif)
 
 for i in range(26):
     print(player1deck[i])
