@@ -1,5 +1,5 @@
 from CardDeck import deck
-from card_distribution2players import player1deck, player2deck
+from Distribution2Players import player1deck, player2deck
 import random, time
 
 # Bataille simple

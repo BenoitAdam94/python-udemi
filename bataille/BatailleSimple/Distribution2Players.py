@@ -1,6 +1,10 @@
 from CardDeck import deck
 import random
 
+###########################
+# distribution des cartes #
+###########################
+
 # Melanger le paquet
 
 random.shuffle(deck)

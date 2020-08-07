@@ -4,3 +4,4 @@ liste.append([6])
 
 if 6 in liste:
     print("Le nombre 6 a bien été ajouté à la liste.")
+    
