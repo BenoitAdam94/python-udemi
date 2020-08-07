@@ -1,5 +1,5 @@
 from CardDeck import deck
-import random, time
+import random
 
 # Choix du nombre de joueurs
 

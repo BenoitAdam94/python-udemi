@@ -29,7 +29,7 @@ for k in range(4):
 # print("")
 
 # Melange le paquet
-random.shuffle(deck)
+# random.shuffle(deck)
 
 # impression du paquet
 for m in range(52):
