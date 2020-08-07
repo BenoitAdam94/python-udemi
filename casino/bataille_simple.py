@@ -2,7 +2,12 @@ from CardDeck import deck
 from card_distribution2players import player1deck, player2deck
 import random, time
 
-while len(player1deck) > 0 or len(player2deck) > 0:
+# Bataille simple
+# Boucle infinie sauf si l'un des joueurs a les 4 as au début de la partie
+
+input("confirmer la distribution des cartes")
+
+while len(player1deck) != 0 and len(player2deck) != 0:
 
     print("")
     # carte au hasard joueur 1
@@ -56,7 +61,12 @@ while len(player1deck) > 0 or len(player2deck) > 0:
         player1deck.append(random_card_j1)
         player2deck.append(random_card_j2)
 
+    # Affichage du nombre de cartes restant
+
     print(f"le joueur 1 a encore {len(player1deck)} cartes")
     print(f"le joueur 2 a encore {len(player2deck)} cartes")
 
     time.sleep(0.1)
+
+if len(player1deck) != 0: print("Le joueur 1 a gagné !")
+if len(player2deck) != 0: print("Le joueur 2 a gagné !")
